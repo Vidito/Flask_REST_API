@@ -14,3 +14,22 @@ Email Notifications
 Send password recovery emails
 Database Commands
 Create, drop, and seed the database using CLI commands
+
+## API Endpoints
+### User Endpoints
+
+| Endpoint                 | Method | Description                               |
+|--------------------------|--------|-------------------------------------------|
+| `/register`              | POST   | Register a new user.                     |
+| `/login`                 | POST   | User login, returns a JWT.               |
+| `/retrieve_password/<email>` | GET    | Sends the user's password via email.     |
+
+### Planet Endpoints
+
+| Endpoint                  | Method | Description                               |
+|---------------------------|--------|-------------------------------------------|
+| `/planets`                | GET    | Retrieves a list of all planets.         |
+| `/planet_details/<planet_id>` | GET    | Retrieves details of a specific planet.  |
+| `/add_planet`             | POST   | Adds a new planet (requires JWT).        |
+| `/update_planet`          | PUT    | Updates an existing planet (requires JWT). |
+| `/remove_planet/<planet_id>` | DELETE | Deletes a planet (requires JWT).         |
