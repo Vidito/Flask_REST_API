@@ -14,8 +14,8 @@ app.config['JWT_SECRET_KEY'] = 'super-secret' # change this to something secure
 # Looking to send emails in production? Check out our Email API/SMTP product!
 app.config['MAIL_SERVER']='sandbox.smtp.mailtrap.io'
 app.config['MAIL_PORT'] = 2525
-app.config['MAIL_USERNAME'] = '0e30294262a94c'
-app.config['MAIL_PASSWORD'] = 'b90e64be7149cf'
+app.config['MAIL_USERNAME'] = 'xxxx'
+app.config['MAIL_PASSWORD'] = 'xxxx'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 
