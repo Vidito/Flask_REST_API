@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, String, Float
 from flask_marshmallow import Marshmallow
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 from flask_mail import Mail, Message
 import os
 
@@ -30,6 +30,7 @@ mail = Mail(app)
 def db_create():
     db.create_all()
     print('Database created!')
+
 
 @app.cli.command('db_drop')
 def db_drop():
@@ -72,19 +73,6 @@ def db_seed():
     db.session.add(test_user)
     db.session.commit()
     print('Database seeded!')
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-@app.route('/super_simple')
-def super_simple():
-    return jsonify(message='Hello from the Planetary API.'), 200
-
-
-@app.route('/not_found')
-def not_found():
-    return jsonify(message='That resource was not found'), 404
 
 
 @app.route('/parameters')
